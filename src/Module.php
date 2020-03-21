@@ -21,8 +21,8 @@ class Module
     {
         return [
             'factories' => [
-                StopForumSpamTable\Ip::class => function ($sm) {
-                    return new StopForumSpamTable\Ip(
+                StopForumSpamTable\IpLegacy::class => function ($sm) {
+                    return new StopForumSpamTable\IpLegacy(
                         $sm->get('stop-forum-spam')
                     );
                 },

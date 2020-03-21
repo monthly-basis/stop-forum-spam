@@ -4,7 +4,7 @@ namespace LeoGalleguillos\StopForumSpam\Table;
 use Zend\Db\Adapter\Adapter;
 use Zend\Db\Adapter\Driver\Pdo\Result;
 
-class Ip
+class IpLegacy
 {
     /**
      * @var Adapter
@@ -22,7 +22,7 @@ class Ip
     ): Result {
         $sql = '
             INSERT IGNORE
-              INTO `ip` (`address`)
+              INTO `ip_legacy` (`address`)
             VALUES (?)
                  ;
         ';
