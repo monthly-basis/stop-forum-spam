@@ -34,4 +34,19 @@ class IpLegacy
             ->query($sql)
             ->execute($parameters);
     }
+
+    public function selectWhereAddress(
+        string $address
+    ): Result {
+        $sql = '
+            SELECT `address`
+              FROM `ip_legacy`
+             WHERE `address` = ?
+                 ;
+        ';
+        $parameters = [
+            $address,
+        ];
+        return $this->adapter->query($sql)->execute($parameters);
+    }
 }
