@@ -4,7 +4,7 @@ namespace LeoGalleguillos\StopForumSpam\Table;
 use Zend\Db\Adapter\Adapter;
 use Zend\Db\Adapter\Driver\Pdo\Result;
 
-class IpLegacy
+class ListedIpLegacy
 {
     /**
      * @var Adapter
@@ -22,7 +22,7 @@ class IpLegacy
     ): Result {
         $sql = '
             INSERT IGNORE
-              INTO `ip_legacy` (`address`)
+              INTO `listed_ip_legacy` (`ip_address`)
             VALUES (?)
                  ;
         ';
@@ -35,17 +35,17 @@ class IpLegacy
             ->execute($parameters);
     }
 
-    public function selectWhereAddress(
-        string $address
+    public function selectWhereIpAddress(
+        string $ipAddress
     ): Result {
         $sql = '
-            SELECT `address`
-              FROM `ip_legacy`
-             WHERE `address` = ?
+            SELECT `ip_address`
+              FROM `listed_ip_legacy`
+             WHERE `ip_address` = ?
                  ;
         ';
         $parameters = [
-            $address,
+            $ipAddress,
         ];
         return $this->adapter->query($sql)->execute($parameters);
     }

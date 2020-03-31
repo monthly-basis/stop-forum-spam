@@ -22,13 +22,13 @@ class Module
     {
         return [
             'factories' => [
-                StopForumSpamService\Ip\Toxic::class => function ($sm) {
-                    return new StopForumSpamService\Ip\Toxic(
-                        $sm->get(StopForumSpamTable\IpLegacy::class)
+                StopForumSpamService\IpAddress\Toxic::class => function ($sm) {
+                    return new StopForumSpamService\IpAddress\Toxic(
+                        $sm->get(StopForumSpamTable\ListedIpLegacy::class)
                     );
                 },
-                StopForumSpamTable\IpLegacy::class => function ($sm) {
-                    return new StopForumSpamTable\IpLegacy(
+                StopForumSpamTable\ListedIpLegacy::class => function ($sm) {
+                    return new StopForumSpamTable\ListedIpLegacy(
                         $sm->get('stop-forum-spam')
                     );
                 },

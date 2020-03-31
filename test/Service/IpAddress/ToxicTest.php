@@ -1,5 +1,5 @@
 <?php
-namespace LeoGalleguillos\StopForumSpamTest\Service\Ip;
+namespace LeoGalleguillos\StopForumSpamTest\Service\IpAddress;
 
 use Laminas\Db\Adapter\Driver\Pdo\Result;
 use LeoGalleguillos\StopForumSpam\Service as StopForumSpamService;
@@ -12,15 +12,15 @@ class ToxicTest extends TestCase
 {
     protected function setUp()
     {
-        $this->ipLegacyTableMock = $this->createMock(
-            StopForumSpamTable\IpLegacy::class
+        $this->listedIpLegacyTableMock = $this->createMock(
+            StopForumSpamTable\ListedIpLegacy::class
         );
-        $this->toxicService = new StopForumSpamService\Ip\Toxic(
-            $this->ipLegacyTableMock
+        $this->toxicService = new StopForumSpamService\IpAddress\Toxic(
+            $this->listedIpLegacyTableMock
         );
     }
 
-    public function test_isToxic_emptyResult_false()
+    public function test_isIpAddressToxic_emptyResult_false()
     {
         $resultMock = $this->createMock(
             Result::class
@@ -31,15 +31,15 @@ class ToxicTest extends TestCase
             $resultMock,
             []
         );
-        $this->ipLegacyTableMock
-            ->method('selectWhereAddress')
+        $this->listedIpLegacyTableMock
+            ->method('selectWhereIpAddress')
             ->willReturn($resultMock);
         $this->assertFalse(
-            $this->toxicService->isToxic('1.2.3.4')
+            $this->toxicService->isIpAddressToxic('1.2.3.4')
         );
     }
 
-    public function test_isToxic_nonEmptyResult_true()
+    public function test_isIpAddressToxic_nonEmptyResult_true()
     {
         $resultMock = $this->createMock(
             Result::class
@@ -49,15 +49,15 @@ class ToxicTest extends TestCase
             $resultMock,
             [
                 [
-                    'address' => '1.2.3.4',
+                    'ip_address' => '1.2.3.4',
                 ],
             ]
         );
-        $this->ipLegacyTableMock
-            ->method('selectWhereAddress')
+        $this->listedIpLegacyTableMock
+            ->method('selectWhereIpAddress')
             ->willReturn($resultMock);
         $this->assertTrue(
-            $this->toxicService->isToxic('1.2.3.4')
+            $this->toxicService->isIpAddressToxic('1.2.3.4')
         );
     }
 }
