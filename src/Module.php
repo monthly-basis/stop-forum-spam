@@ -24,7 +24,12 @@ class Module
             'factories' => [
                 StopForumSpamService\IpAddress\Toxic::class => function ($sm) {
                     return new StopForumSpamService\IpAddress\Toxic(
-                        $sm->get(StopForumSpamTable\ListedIpLegacy::class)
+                        $sm->get(StopForumSpamTable\ListedIp365::class)
+                    );
+                },
+                StopForumSpamTable\ListedIp365::class => function ($sm) {
+                    return new StopForumSpamTable\ListedIp365(
+                        $sm->get('stop-forum-spam')
                     );
                 },
                 StopForumSpamTable\ListedIpLegacy::class => function ($sm) {

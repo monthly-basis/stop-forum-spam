@@ -12,11 +12,11 @@ class ToxicTest extends TestCase
 {
     protected function setUp()
     {
-        $this->listedIpLegacyTableMock = $this->createMock(
-            StopForumSpamTable\ListedIpLegacy::class
+        $this->listedIp365TableMock = $this->createMock(
+            StopForumSpamTable\ListedIp365::class
         );
         $this->toxicService = new StopForumSpamService\IpAddress\Toxic(
-            $this->listedIpLegacyTableMock
+            $this->listedIp365TableMock
         );
     }
 
@@ -31,7 +31,7 @@ class ToxicTest extends TestCase
             $resultMock,
             []
         );
-        $this->listedIpLegacyTableMock
+        $this->listedIp365TableMock
             ->method('selectWhereIpAddress')
             ->willReturn($resultMock);
         $this->assertFalse(
@@ -53,7 +53,7 @@ class ToxicTest extends TestCase
                 ],
             ]
         );
-        $this->listedIpLegacyTableMock
+        $this->listedIp365TableMock
             ->method('selectWhereIpAddress')
             ->willReturn($resultMock);
         $this->assertTrue(
