@@ -4,8 +4,8 @@ namespace LeoGalleguillos\StopForumSpamTest\Service\IpAddress;
 use Laminas\Db\Adapter\Driver\Pdo\Result;
 use LeoGalleguillos\StopForumSpam\Service as StopForumSpamService;
 use LeoGalleguillos\StopForumSpam\Table as StopForumSpamTable;
-use LeoGalleguillos\Test\Hydrator as TestHydrator;
-use LeoGalleguillos\Test\TableTestCase;
+use MonthlyBasis\LaminasTest\Hydrator as TestHydrator;
+use MonthlyBasis\LaminasTest\TableTestCase;
 use PHPUnit\Framework\TestCase;
 
 class ToxicTest extends TestCase

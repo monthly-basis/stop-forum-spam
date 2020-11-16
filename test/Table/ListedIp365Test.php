@@ -2,7 +2,7 @@
 namespace LeoGalleguillos\StopForumSpamTest\Table;
 
 use LeoGalleguillos\StopForumSpam\Table as StopForumSpamTable;
-use LeoGalleguillos\Test\TableTestCase;
+use MonthlyBasis\LaminasTest\TableTestCase;
 
 class ListedIp365Test extends TableTestCase
 {

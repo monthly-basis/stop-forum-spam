@@ -2,7 +2,7 @@
 namespace LeoGalleguillos\StopForumSpamTest;
 
 use LeoGalleguillos\StopForumSpam\Module;
-use LeoGalleguillos\Test\ModuleTestCase;
+use MonthlyBasis\LaminasTest\ModuleTestCase;
 
 class ModuleTest extends ModuleTestCase
 {
