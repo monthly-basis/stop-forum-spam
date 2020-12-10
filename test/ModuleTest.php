@@ -1,7 +1,7 @@
 <?php
-namespace LeoGalleguillos\StopForumSpamTest;
+namespace MonthlyBasis\StopForumSpamTest;
 
-use LeoGalleguillos\StopForumSpam\Module;
+use MonthlyBasis\StopForumSpam\Module;
 use MonthlyBasis\LaminasTest\ModuleTestCase;
 
 class ModuleTest extends ModuleTestCase

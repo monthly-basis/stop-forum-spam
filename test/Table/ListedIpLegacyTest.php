@@ -1,7 +1,7 @@
 <?php
-namespace LeoGalleguillos\StopForumSpamTest\Table;
+namespace MonthlyBasis\StopForumSpamTest\Table;
 
-use LeoGalleguillos\StopForumSpam\Table as StopForumSpamTable;
+use MonthlyBasis\StopForumSpam\Table as StopForumSpamTable;
 use MonthlyBasis\LaminasTest\TableTestCase;
 
 class ListedIpLegacyTest extends TableTestCase

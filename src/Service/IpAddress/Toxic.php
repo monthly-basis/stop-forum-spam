@@ -1,7 +1,7 @@
 <?php
-namespace LeoGalleguillos\StopForumSpam\Service\IpAddress;
+namespace MonthlyBasis\StopForumSpam\Service\IpAddress;
 
-use LeoGalleguillos\StopForumSpam\Table as StopForumSpamTable;
+use MonthlyBasis\StopForumSpam\Table as StopForumSpamTable;
 
 class Toxic
 {

@@ -1,8 +1,8 @@
 <?php
-namespace LeoGalleguillos\StopForumSpam;
+namespace MonthlyBasis\StopForumSpam;
 
-use LeoGalleguillos\StopForumSpam\Service as StopForumSpamService;
-use LeoGalleguillos\StopForumSpam\Table as StopForumSpamTable;
+use MonthlyBasis\StopForumSpam\Service as StopForumSpamService;
+use MonthlyBasis\StopForumSpam\Table as StopForumSpamTable;
 
 class Module
 {

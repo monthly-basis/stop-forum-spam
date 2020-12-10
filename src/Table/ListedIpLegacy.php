@@ -1,5 +1,5 @@
 <?php
-namespace LeoGalleguillos\StopForumSpam\Table;
+namespace MonthlyBasis\StopForumSpam\Table;
 
 use Zend\Db\Adapter\Adapter;
 use Zend\Db\Adapter\Driver\Pdo\Result;

@@ -2,7 +2,7 @@
 
 return [
     'modules' => [
-        'LeoGalleguillos\StopForumSpam',
+        'MonthlyBasis\StopForumSpam',
         'Zend\Db',
         'Zend\Router',
     ],

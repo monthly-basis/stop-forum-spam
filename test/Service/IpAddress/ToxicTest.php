@@ -1,9 +1,9 @@
 <?php
-namespace LeoGalleguillos\StopForumSpamTest\Service\IpAddress;
+namespace MonthlyBasis\StopForumSpamTest\Service\IpAddress;
 
 use Laminas\Db\Adapter\Driver\Pdo\Result;
-use LeoGalleguillos\StopForumSpam\Service as StopForumSpamService;
-use LeoGalleguillos\StopForumSpam\Table as StopForumSpamTable;
+use MonthlyBasis\StopForumSpam\Service as StopForumSpamService;
+use MonthlyBasis\StopForumSpam\Table as StopForumSpamTable;
 use MonthlyBasis\LaminasTest\Hydrator as TestHydrator;
 use MonthlyBasis\LaminasTest\TableTestCase;
 use PHPUnit\Framework\TestCase;
