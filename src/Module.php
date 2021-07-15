@@ -42,15 +42,6 @@ class Module
                         $sm->get('stop-forum-spam')
                     );
                 },
-                /*
-                 * @deprecated This table model is probably not used anywhere.
-                 * It can probably just be deleted.
-                 */
-                \MonthlyBasis\StopForumSpam\Table\ListedIpLegacy::class => function ($sm) {
-                    return new \MonthlyBasis\StopForumSpam\Table\ListedIpLegacy(
-                        $sm->get('stop-forum-spam')
-                    );
-                },
             ],
         ];
     }
