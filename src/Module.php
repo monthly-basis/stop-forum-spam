@@ -22,11 +22,21 @@ class Module
     {
         return [
             'factories' => [
+                /*
+                 * @deprecated The namespace of this service omits the 'Model'
+                 * directory and is therefore wrong.
+                 * Use StopForumSpamService\IpAddress\Toxic() instead
+                 */
                 \MonthlyBasis\StopForumSpam\Service\IpAddress\Toxic::class => function ($sm) {
                     return new \MonthlyBasis\StopForumSpam\Service\IpAddress\Toxic(
                         $sm->get(\MonthlyBasis\StopForumSpam\Table\ListedIp365::class)
                     );
                 },
+                /*
+                 * @deprecated The namespace of this table model omits the 'Model'
+                 * directory and is therefore wrong.
+                 * Use StopForumSpamService\IpAddress\Toxic() instead
+                 */
                 \MonthlyBasis\StopForumSpam\Table\ListedIp365::class => function ($sm) {
                     return new \MonthlyBasis\StopForumSpam\Table\ListedIp365(
                         $sm->get('stop-forum-spam')
