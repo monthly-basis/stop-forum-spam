@@ -1,8 +1,8 @@
 <?php
 namespace MonthlyBasis\StopForumSpam;
 
-use MonthlyBasis\StopForumSpam\Service as StopForumSpamService;
-use MonthlyBasis\StopForumSpam\Table as StopForumSpamTable;
+use MonthlyBasis\StopForumSpam\Model\Service as StopForumSpamService;
+use MonthlyBasis\StopForumSpam\Model\Table as StopForumSpamTable;
 
 class Module
 {
@@ -22,6 +22,16 @@ class Module
     {
         return [
             'factories' => [
+                \MonthlyBasis\StopForumSpam\Service\IpAddress\Toxic::class => function ($sm) {
+                    return new \MonthlyBasis\StopForumSpam\Service\IpAddress\Toxic(
+                        $sm->get(\MonthlyBasis\StopForumSpam\Table\ListedIp365::class)
+                    );
+                },
+                \MonthlyBasis\StopForumSpam\Table\ListedIp365::class => function ($sm) {
+                    return new \MonthlyBasis\StopForumSpam\Table\ListedIp365(
+                        $sm->get('stop-forum-spam')
+                    );
+                },
                 StopForumSpamService\IpAddress\Toxic::class => function ($sm) {
                     return new StopForumSpamService\IpAddress\Toxic(
                         $sm->get(StopForumSpamTable\ListedIp365::class)
@@ -32,8 +42,12 @@ class Module
                         $sm->get('stop-forum-spam')
                     );
                 },
-                StopForumSpamTable\ListedIpLegacy::class => function ($sm) {
-                    return new StopForumSpamTable\ListedIpLegacy(
+                /*
+                 * @deprecated This table model is probably not used anywhere.
+                 * It can probably just be deleted.
+                 */
+                \MonthlyBasis\StopForumSpam\Table\ListedIpLegacy::class => function ($sm) {
+                    return new \MonthlyBasis\StopForumSpam\Table\ListedIpLegacy(
                         $sm->get('stop-forum-spam')
                     );
                 },
