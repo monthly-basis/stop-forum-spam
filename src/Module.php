@@ -6,18 +6,6 @@ use MonthlyBasis\StopForumSpam\Model\Table as StopForumSpamTable;
 
 class Module
 {
-    public function getConfig()
-    {
-        return [
-            'view_helpers' => [
-                'aliases' => [
-                ],
-                'factories' => [
-                ],
-            ],
-        ];
-    }
-
     public function getServiceConfig()
     {
         return [
